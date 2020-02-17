@@ -19,7 +19,7 @@ namespace SuperHeroProject.Controllers
         }
         public ActionResult Index()
         {
-            return View();
+            return View(dbContext.superHeroes.ToList());
         }
 
         // GET: SuperHeroes/Details/5
@@ -43,7 +43,7 @@ namespace SuperHeroProject.Controllers
             try
             {
                 // TODO: Add insert logic here
-                dbContext.SuperHeroes.Add(superHero);
+                dbContext.superHeroes.Add(superHero);
                 dbContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
@@ -93,7 +93,7 @@ namespace SuperHeroProject.Controllers
             {
                 // TODO: Add delete logic here
 
-                dbContext.SuperHeroes.Remove(superHero)
+                dbContext.superHeroes.Remove(superHero);
                 dbContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }

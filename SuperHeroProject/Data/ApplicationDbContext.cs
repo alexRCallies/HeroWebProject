@@ -13,6 +13,6 @@ namespace SuperHeroProject.Data
             : base(options)
         {
         }
-        public DbSet<SuperHero> SuperHeroes { get; set; }
+        public DbSet<SuperHero> superHeroes { get; set; }
     }
 }
