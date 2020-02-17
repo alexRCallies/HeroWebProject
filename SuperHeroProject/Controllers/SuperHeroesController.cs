@@ -93,7 +93,7 @@ namespace SuperHeroProject.Controllers
             {
                 // TODO: Add delete logic here
 
-                dbContext.SuperHeroes.Remove(superHero);
+                dbContext.SuperHeroes.Remove(superHero)
                 dbContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
