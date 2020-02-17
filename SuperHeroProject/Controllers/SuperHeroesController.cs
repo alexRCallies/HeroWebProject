@@ -25,7 +25,8 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHeroes/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var hero = dbContext.superHeroes.Where(x => x.ID == id).FirstOrDefault();
+            return View(hero);
         }
 
         // GET: SuperHeroes/Create
@@ -56,7 +57,7 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHeroes/Edit/5
         public ActionResult Edit(int id)
         {
-            SuperHero superHero = new SuperHero();
+           
             return View();
         }
 
@@ -65,10 +66,11 @@ namespace SuperHeroProject.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, SuperHero superHero)
         {
+          
             try
             {
                 // TODO: Add update logic here
-
+               
                 return RedirectToAction(nameof(Index));
             }
             catch
