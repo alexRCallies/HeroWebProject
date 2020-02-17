@@ -102,26 +102,5 @@ namespace SuperHeroProject.Controllers
                 return View();
             }
         }
-        
-        public ActionResult Search()
-        {
-            SuperHero superHero = new SuperHero();
-            return View(superHero);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Search(SuperHero superHero)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-                dbContext.SuperHeroes.Find(superHero);
-                return Details(superHero.ID);
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }
