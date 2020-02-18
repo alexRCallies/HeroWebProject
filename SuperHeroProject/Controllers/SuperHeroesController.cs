@@ -57,8 +57,9 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHeroes/Edit/5
         public ActionResult Edit(int id)
         {
-           
-            return View();
+            var superHero = dbContext.superHeroes.Find(id);
+
+            return View(superHero);
         }
 
         // POST: SuperHeroes/Edit/5
@@ -70,7 +71,8 @@ namespace SuperHeroProject.Controllers
             try
             {
                 // TODO: Add update logic here
-               
+                dbContext.superHeroes.Update(superHero);
+                dbContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
